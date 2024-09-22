@@ -1,0 +1,82 @@
+.content {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .shareButton {
+    border: none;
+    border-radius: 50%;
+    padding: 0.8rem;
+    overflow: hidden;
+    outline: none;
+    margin: 0.5rem;
+    width: 24px;
+    height: 24px;
+    box-sizing: content-box;
+    transition: all 200ms;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+  }
+
+  .socialButton {
+    position: absolute;
+    bottom: 0; /* Position the button at the bottom */
+    opacity: 0; /* Start with buttons invisible */
+    right: 20;
+    // transform: scale(0) translateY(0); /* Start with buttons scaled down */
+  }
+  
+  .shareButton:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+  }
+  
+  .shareButton svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+    transition: all 150ms;
+    transform: scale(1);
+  }
+  
+  /* Specific transitions for each button */
+  .shareButton.fb, .shareButton.open.ig {
+    transition-delay: 100ms;
+  }
+  
+  .shareButton.tw, .shareButton.open.tw {
+    transition-delay: 50ms;
+  }
+  
+  .shareButton.ig, .shareButton.open.fb {
+    transition-delay: 0ms;
+  }
+  
+  /* Transition styles for buttons when 'open' */
+  .shareButton.fb, .shareButton.tw, .shareButton.ig {
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  /* Adjust translateY values for each button to space them out vertically */
+  .shareButton.open.fb {
+    opacity: 1;
+    transform: scale(1) translateY(-65px); /* Increased space */
+    transition-delay: 0ms;
+  }
+  
+  .shareButton.open.tw {
+    opacity: 1;
+    transform: scale(1) translateY(-125px); /* Increased space */
+    transition-delay: 0ms;
+  }
+  
+  .shareButton.open.ig {
+    opacity: 1;
+    transform: scale(1) translateY(-185px); /* Increased space */
+    transition-delay: 0ms;
+  }

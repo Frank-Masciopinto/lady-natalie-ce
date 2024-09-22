@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Lady Natalie - Wizualizacja Sukni Ślubnych",
+  "version": "1.00",
+  "description": "Zamień nową kartę w piękną galerię sukni ślubnych. Idealne dla przyszłych panien młodych, to rozszerzenie oferuje inspiracje i wizualizacje oszałamiających sukni ślubnych, aby pomóc w zaplanowaniu wymarzonego wesela.",
+  "icons": {
+    "16": "icons/16.png",
+    "128": "icons/128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "./html/index.html"
+  },
+  "permissions": ["storage", "notifications", "identity", "activeTab", "tabs"],
+  "host_permissions": ["http://*/*", "*://*/*"],
+  "options_ui": {
+    "page": "html/options.html",
+    "open_in_tab": true
+  },
+  "oauth2": {
+    "client_id": "970872214371-2n78sauabp5o7h007ki70r6us81ujd5o.apps.googleusercontent.com",
+    "scopes": ["openid", "email", "profile"]
+  }
+}

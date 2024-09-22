@@ -1,0 +1,10 @@
+.sidebar-container {
+    // background-color: rgba(0,0,0,0.35);
+    // box-shadow: 0 10px 15px rgb(0 0 0 / 20%);
+    // box-shadow: 0 10px 15px rgb(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    backdrop-filter: blur(3px);
+    background-blend-mode: overlay;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

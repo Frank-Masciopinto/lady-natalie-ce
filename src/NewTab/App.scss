@@ -1,0 +1,87 @@
+input[type='text']:focus {
+    --tw-ring-color: transparent;
+    box-shadow: none !important;
+}
+
+.auth-button {
+    padding: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    color: gray;
+    border-bottom: 1px solid gray;
+    margin-right: 20px;
+    transition-duration: 200ms;
+    width: 100px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.wanderlust-text-input {
+    border-top: none;
+    background: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid white;
+    color: #fff;
+    width: 100%;
+    outline: none;
+    padding: 15px;
+    font-size: 32px;
+    text-align: center;
+    font-family: "Quicksand Bold";
+    margin-bottom: 1px;
+  
+    &:focus {
+      border-bottom: 2px solid white;
+      margin-bottom: 0;
+    }
+  }
+  
+  .wanderlust-input-label {
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 3px 1px 6px rgba(0, 0, 0, 0.31);
+  }
+  
+  .button {
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #fff;
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    cursor: pointer;
+    outline: none;
+  }
+  .button:not(:disabled):hover,
+  .button:not(:disabled):focus,
+  .button:not(:disabled):active,
+  .button:not(:disabled)[active] {
+    color: #fff;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+  
+  .button-close {
+    padding: 0.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: none;
+  }
+  
+  .button-contrast {
+    color: var(--body-bg);
+  }
+  
+  .inline {
+    display: inline;
+  }
+  

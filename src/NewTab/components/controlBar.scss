@@ -1,0 +1,203 @@
+.controlBar {
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+  padding-right: 20px;
+  padding-left: 40px;
+  padding-bottom: 80px;
+  width: 150px;
+  height: 50px;
+  transition-duration: 0.5s;
+  // background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  // box-shadow: 0 0 95px 95px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.controlbar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 10px 20px;
+}
+
+.controlbar-icon-image {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-tooltip {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  position: absolute;
+  min-width: 400px;
+  top: 55px;
+  right: 5px;
+  font-size: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.feather-refresh-cw {
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 600px) {
+  .icon-tooltip {
+    min-width: 220px;
+    width: 250px;
+    height: 70px;
+  }
+}
+
+.icon-animation {
+  animation: bounce 2s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slideDown {
+  0% {
+    top: -320px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.controlBar a {
+  color: #fff;
+}
+
+.wrapper {
+  display: inline-flex;
+
+  .icon {
+    margin: 0 10px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    span {
+      display: block;
+      height: 60px;
+      width: 60px;
+      background: #364f6b;
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      color: #fff;
+
+      i {
+        line-height: 60px;
+        font-size: 25px;
+      }
+    }
+
+    .tooltip {
+      position: absolute;
+      top: -45px;
+      z-index: 1;
+      background: #fff;
+      color: #fff;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 25px;
+      opacity: 0;
+      pointer-events: none;
+      box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+      transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+  }
+}
+
+
+.wrapper .icon:hover .tooltip {
+  top: -55px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.icon .tooltip:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .like:hover span,
+.wrapper .like:hover .tooltip,
+.wrapper .like:hover .tooltip:before {
+  background: #ececed;
+  color: rgb(35, 35, 35);
+}
+
+.wrapper .facts:hover span,
+.wrapper .facts:hover .tooltip,
+.wrapper .facts:hover .tooltip:before {
+  background: #ececed;
+  color: rgb(35, 35, 35);
+}
+
+.wrapper .refresh:hover span,
+.wrapper .refresh:hover .tooltip,
+.wrapper .refresh:hover .tooltip:before {
+  background: #ececed;
+  color: rgb(35, 35, 35);
+}
+
+// Carousel
+.carouselContainer {
+  position: relative;
+}
+
+.carousel {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 24px;
+  max-width: 100%;
+}
+
+.carousel .item {
+  scroll-snap-align: start;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-controls-previous {
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.carouselNavigation-next {
+  position: absolute;
+  right: 0;
+  z-index: 100;
+}
