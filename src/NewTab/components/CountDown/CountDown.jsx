@@ -10,6 +10,7 @@ const AbsoluteContainer = styled(Box)(({ theme }) => ({
   position: 'absolute',
   top: 0,
   left: 0,
+  textAlign: 'center',
   width: '100%',
   height: '100%',
   backgroundColor: 'transparent',
@@ -78,13 +79,14 @@ const WeddingCountdown = () => {
 
   // Set up the countdown timer
   useEffect(() => {
+    let interval;
     if (weddingDate) {
       updateTimeRemaining(); // Update immediately
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         updateTimeRemaining();
       }, 1000);
-      return () => clearInterval(interval);
     }
+    return () => clearInterval(interval);
   }, [weddingDate]);
 
   const updateTimeRemaining = () => {
@@ -118,9 +120,20 @@ const WeddingCountdown = () => {
     e.preventDefault();
     if (name && weddingDate) {
       localStorage.setItem('name', name);
-      localStorage.setItem('weddingDate', weddingDate);
+      localStorage.setItem('weddingDate', weddingDate.toString());
       setShowForm(false);
     }
+  };
+
+  const handleReset = () => {
+    // Clear data from localStorage
+    localStorage.removeItem('name');
+    localStorage.removeItem('weddingDate');
+    // Reset state
+    setName('');
+    setWeddingDate(null);
+    setTimeRemaining({});
+    setShowForm(true);
   };
 
   const getGreetingTime = () => {
@@ -149,10 +162,12 @@ const WeddingCountdown = () => {
               label="Data ślubu"
               value={weddingDate}
               onChange={(newValue) => setWeddingDate(newValue)}
-              renderInput={(params) => (
-                <TextField {...params} required fullWidth margin="normal" />
-              )}
               disablePast
+              slots={{
+                textField: (params) => (
+                  <TextField {...params} required fullWidth margin="normal" />
+                ),
+              }}
             />
           </LocalizationProvider>
           <Button
@@ -201,6 +216,14 @@ const WeddingCountdown = () => {
               </TimeSegment>
             </Box>
           </CountdownContainer>
+          <Button
+            variant="outlined"
+            color="secondary"
+            onClick={handleReset}
+            sx={{ mt: 4 }}
+          >
+            Resetuj
+          </Button>
         </Box>
       )}
     </AbsoluteContainer>

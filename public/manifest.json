@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Lady Natalie - Wizualizacja Sukni Ślubnych",
+  "name": "Lady Natalie - Lista Zadań Ślubnych, Wizualizacja Sukni i Odliczanie",
   "version": "1.00",
-  "description": "Zamień nową kartę w piękną galerię sukni ślubnych. Idealne dla przyszłych panien młodych, to rozszerzenie oferuje inspiracje i wizualizacje oszałamiających sukni ślubnych, aby pomóc w zaplanowaniu wymarzonego wesela.",
+  "description": "Zamień swoją nową kartę w idealnego asystenta planowania ślubu. To rozszerzenie oferuje listę najważniejszych zadań do wykonania przed ślubem, galerię oszałamiających wizualizacji sukni ślubnych, które dostarczą inspiracji, oraz zegar odliczający czas do Twojego wielkiego dnia. Pozostań zorganizowana i podekscytowana, obserwując, jak dni, godziny i sekundy mijają, aż do Twojego wymarzonego ślubu.",
   "icons": {
     "16": "icons/16.png",
     "128": "icons/128.png"

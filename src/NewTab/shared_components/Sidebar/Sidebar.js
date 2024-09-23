@@ -51,7 +51,7 @@ function Sidebar({ refresh }) {
     // navigate to external url
     if (user) {
       window.open(
-        `https://wanderlustapp.io/loading?forwardPath=${url}&accessToken=${localStorage.getItem(
+        `https://app.io/loading?forwardPath=${url}&accessToken=${localStorage.getItem(
           'accessToken'
         )}&refreshToken=${localStorage.getItem(
           'refreshToken'
@@ -59,7 +59,7 @@ function Sidebar({ refresh }) {
         '_self'
       );
     } else {
-      window.open(`https://wanderlustapp.io`, '_self');
+      // window.open(`https://app.io`, '_self');
     }
   };
 

@@ -40,7 +40,6 @@ function PasswordReset() {
       return;
     }
 
-    window.location.href = 'https://wanderlustapp.io';
     navigate('/login');
   };
 

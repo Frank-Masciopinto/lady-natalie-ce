@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Lady Natalie - Lista Zadań Ślubnych, Wizualizacja Sukni i Odliczanie",
+  "version": "1.00",
+  "description": "Lista zadań ślubnych, wizualizacja sukni ślubnych i odliczanie do dnia ślubu – wszystko w jednej karcie!",
+  "icons": {
+    "16": "icons/16.png",
+    "128": "icons/128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "./html/index.html"
+  }
+}

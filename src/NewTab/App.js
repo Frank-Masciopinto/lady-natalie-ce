@@ -112,16 +112,16 @@ export default function App() {
         const location = getQueuedLocation();
 
         // Get favorite status if logged in
-        if (localStorage.getItem('token')) {
-            request(`/favorites/city/${location.city}`)
-                .then(response => {
-                    if(response?.data?.favorited) {
-                        setCurrentImageFavoriteStatus(true)
-                    } else {
-                        setCurrentImageFavoriteStatus(false)
-                    }
-                })
-        }
+        // if (localStorage.getItem('token')) {
+        //     request(`/favorites/city/${location.city}`)
+        //         .then(response => {
+        //             if(response?.data?.favorited) {
+        //                 setCurrentImageFavoriteStatus(true)
+        //             } else {
+        //                 setCurrentImageFavoriteStatus(false)
+        //             }
+        //         })
+        // }
 
         setLocationId(location.id);
         setFact(location.fact);

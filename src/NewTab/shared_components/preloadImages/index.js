@@ -1,6 +1,6 @@
-import getLocation from "./locationApi";
+import getLocation from './locationApi';
 
-const LOCAL_STORAGE_PREFIX = "imageQueue";
+const LOCAL_STORAGE_PREFIX = 'imageQueue';
 
 // This queue holds information about images we want to load, it will be the location object from the location API.
 // It does not hold the image itself. It is mutated.
@@ -11,42 +11,22 @@ let queue = [];
 const preloadImages = async () => {
   // Fill queue from localStorage, we have at least one item to use
   // Each imageQueue${index} value is a JSON object
-  if (localStorage.getItem("imageQueue0")) {
-    try {
-      // Our queue is limited to 3 entries
-      [0, 1, 2].forEach((value) => {
-        const parsedQueueItem = JSON.parse(
-          localStorage.getItem(`${LOCAL_STORAGE_PREFIX}${value}`)
-        );
-        queue.push(parsedQueueItem);
-      });
-      return;
-    } catch (error) {
-      // If something in cache becomes corrupted, we'll need to recover as we may load image data
-      // from here (queue is populated from cache on load). So, nuke it all if a JSON.parse error occurs.
-      console.error("ImageQueue error loading the queue:", error);
-      [0, 1, 2].forEach((value) => {
-        localStorage.removeItem(`${LOCAL_STORAGE_PREFIX}${value}`);
-      });
-      return;
-    }
-  } else {
-    // Initial queue construction
-    // Grab data for 3 images
-    const newQueue = await Promise.all([
-      getLocation(),
-      getLocation(),
-      getLocation(),
-    ]);
-    // Replace our in-memory queue
-    queue = newQueue;
-    // Place queue in LocalStorage entries
-    fillLocalStorageFromQueue();
-    // Cache each image
-    queue.forEach(({ url, smallUrl }) => {
-      cacheImage(url, smallUrl);
-    });
-  }
+
+  // Initial queue construction
+  // Grab data for 3 images
+  const newQueue = await Promise.all([
+    getLocation(),
+    getLocation(),
+    getLocation(),
+  ]);
+  // Replace our in-memory queue
+  queue = newQueue;
+  // Place queue in LocalStorage entries
+  fillLocalStorageFromQueue();
+  // Cache each image
+  queue.forEach(({ url, smallUrl }) => {
+    cacheImage(url, smallUrl);
+  });
 };
 
 // Exported function.
@@ -54,7 +34,7 @@ const preloadImages = async () => {
 const getQueuedLocation = () => {
   const location = queue[0];
   if (!location) {
-    console.error("Tried to get a location on an empty queue.");
+    console.error('Tried to get a location on an empty queue.');
     return null;
   }
   // Cache upcoming image
@@ -86,7 +66,7 @@ function fillLocalStorageFromQueue() {
     });
   } catch (error) {
     console.error(
-      "fillLocalStorageFromQueue error updating local storage entries:",
+      'fillLocalStorageFromQueue error updating local storage entries:',
       error
     );
   }

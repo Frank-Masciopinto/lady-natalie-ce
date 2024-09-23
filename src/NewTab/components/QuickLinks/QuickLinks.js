@@ -73,158 +73,41 @@ const QuickLinks = () => {
             </div>
           </a>
         }
-        {localStorage.getItem('googleAnalyticsHidden') !== 'false' &&
-          localStorage.getItem('googleAnalyticsHidden') && (
-            <a
-              href="https://analytics.google.com/analytics/web/"
-              rel="noopener noreferrer"
-              className="quickLinksBar__link"
-            >
-              <div
-                style={{ width: '35px', height: '35px', padding: '10px' }}
-                className="quickLinksBar__link__icon bg-gray-200 rounded-full dark:bg-gray-700/80 opacity-50 hover:opacity-80 transition-all"
-              >
-                <img
-                  src="https://wanderlust-extension.s3.us-west-2.amazonaws.com/google_analytics-removebg-preview.png"
-                  alt="ChatGPT"
-                  style={{ width: '20px', height: '20px' }}
-                />
-              </div>
-            </a>
-          )}
-        {localStorage.getItem('xHidden') !== 'false' &&
-          localStorage.getItem('xHidden') && (
-            <a
-              href="https://www.x.com"
-              rel="noopener noreferrer"
-              className="quickLinksBar__link"
-            >
-              <div
-                style={{ width: '35px', height: '35px', padding: '10px' }}
-                className="quickLinksBar__link__icon bg-gray-200 rounded-full dark:bg-gray-700/80 opacity-50 hover:opacity-80 transition-all"
-              >
-                <img
-                  src="https://wanderlust-extension.s3.us-west-2.amazonaws.com/x.png"
-                  alt="ChatGPT"
-                  style={{ width: '35px', height: '35px' }}
-                />
-              </div>
-            </a>
-          )}
-        {localStorage.getItem('instagramHidden') !== 'false' &&
-          localStorage.getItem('instagramHidden') && (
-            <a
-              href="https://www.instagram.com"
-              rel="noopener noreferrer"
-              className="quickLinksBar__link"
-            >
-              <div
-                style={{ width: '35px', height: '35px', padding: '10px' }}
-                className="quickLinksBar__link__icon bg-gray-200 rounded-full dark:bg-gray-700/80 opacity-50 hover:opacity-80 transition-all"
-              >
-                <img
-                  src="https://wanderlust-extension.s3.us-west-2.amazonaws.com/instagram.png"
-                  alt="ChatGPT"
-                  style={{ width: '20px', height: '20px' }}
-                />
-              </div>
-            </a>
-          )}
-        {localStorage.getItem('bardHidden') !== 'false' &&
-          localStorage.getItem('bardHidden') && (
-            <a
-              href="https://bard.google.com/"
-              rel="noopener noreferrer"
-              className="quickLinksBar__link"
-            >
-              <div
-                style={{ width: '35px', height: '35px', padding: '10px' }}
-                className="quickLinksBar__link__icon bg-gray-200 rounded-full dark:bg-gray-700/80 opacity-50 hover:opacity-80 transition-all"
-              >
-                <img
-                  src="https://wanderlust-extension.s3.us-west-2.amazonaws.com/bard.svg"
-                  alt="ChatGPT"
-                  style={{ width: '20px', height: '20px' }}
-                />
-              </div>
-            </a>
-          )}
-        {localStorage.getItem('redditHidden') !== 'false' &&
-          localStorage.getItem('redditHidden') && (
-            <a
-              href="https://www.reddit.com/"
-              rel="noopener noreferrer"
-              className="quickLinksBar__link"
-            >
-              <div
-                style={{ width: '35px', height: '35px', padding: '10px' }}
-                className="quickLinksBar__link__icon bg-gray-200 rounded-full dark:bg-gray-700/80 opacity-50 hover:opacity-80 transition-all"
-              >
-                <img
-                  src="https://wanderlust-extension.s3.us-west-2.amazonaws.com/reddit.png"
-                  alt="ChatGPT"
-                  style={{ width: '20px', height: '20px' }}
-                />
-              </div>
-            </a>
-          )}
-        {localStorage.getItem('netflixHidden') !== 'false' &&
-          localStorage.getItem('netflixHidden') && (
-            <a
-              href="https://www.netflix.com/"
-              rel="noopener noreferrer"
-              className="quickLinksBar__link"
-            >
-              <div
-                style={{ width: '35px', height: '35px', padding: '10px' }}
-                className="quickLinksBar__link__icon bg-gray-200 rounded-full dark:bg-gray-700/80 opacity-50 hover:opacity-80 transition-all"
-              >
-                <img
-                  src="https://wanderlust-extension.s3.us-west-2.amazonaws.com/netflix.png"
-                  alt="ChatGPT"
-                  style={{ width: '35px', height: '35px' }}
-                />
-              </div>
-            </a>
-          )}
-        {localStorage.getItem('tikTokHidden') !== 'false' &&
-          localStorage.getItem('tikTokHidden') && (
-            <a
-              href="https://www.tiktok.com/"
-              rel="noopener noreferrer"
-              className="quickLinksBar__link"
-            >
-              <div
-                style={{ width: '35px', height: '35px', padding: '10px' }}
-                className="quickLinksBar__link__icon bg-gray-200 rounded-full dark:bg-gray-700/80 opacity-50 hover:opacity-80 transition-all"
-              >
-                <img
-                  src="https://wanderlust-extension.s3.us-west-2.amazonaws.com/tiktok.png"
-                  alt="ChatGPT"
-                  style={{ width: '20px', height: '20px' }}
-                />
-              </div>
-            </a>
-          )}
-        {localStorage.getItem('discordHidden') !== 'false' &&
-          localStorage.getItem('discordHidden') && (
-            <a
-              href="https://discord.com/channels/@me"
-              rel="noopener noreferrer"
-              className="quickLinksBar__link"
-            >
-              <div
-                style={{ width: '35px', height: '35px', padding: '10px' }}
-                className="quickLinksBar__link__icon bg-gray-200 rounded-full dark:bg-gray-700/80 opacity-50 hover:opacity-80 transition-all"
-              >
-                <img
-                  src="https://wanderlust-extension.s3.us-west-2.amazonaws.com/discord.png"
-                  alt="ChatGPT"
-                  style={{ width: '20px', height: '20px' }}
-                />
-              </div>
-            </a>
-          )}
+
+        <a
+          href="https://www.instagram.com"
+          rel="noopener noreferrer"
+          className="quickLinksBar__link"
+        >
+          <div
+            style={{ width: '35px', height: '35px', padding: '10px' }}
+            className="quickLinksBar__link__icon bg-gray-200 rounded-full dark:bg-gray-700/80 opacity-50 hover:opacity-80 transition-all"
+          >
+            <img
+              src="/icons/instagram.png"
+              alt="isntagram"
+              style={{ width: '20px', height: '20px' }}
+            />
+          </div>
+        </a>
+
+        <a
+          href="https://www.netflix.com/"
+          rel="noopener noreferrer"
+          className="quickLinksBar__link"
+        >
+          <div
+            style={{ width: '35px', height: '35px', padding: '10px' }}
+            className="quickLinksBar__link__icon bg-gray-200 rounded-full dark:bg-gray-700/80 opacity-50 hover:opacity-80 transition-all"
+          >
+            <img
+              src="/icons/netflix.png"
+              alt="ChatGPT"
+              style={{ width: '35px', height: '35px' }}
+            />
+          </div>
+        </a>
+
         {
           <a
             href="https://www.youtube.com/"

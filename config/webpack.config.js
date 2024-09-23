@@ -14,7 +14,12 @@ const config = (env, argv) =>
       api: PATHS.src + '/api.js',
       newTab: PATHS.src + '/NewTab/index.jsx',
     },
-
+    output: {
+      // the build folder to output bundles and assets in.
+      path: argv.mode === 'production' ? PATHS.prod : PATHS.build,
+      // the filename template for entry chunks
+      filename: '[name].js',
+    },
     module: {
       rules: [
         {
