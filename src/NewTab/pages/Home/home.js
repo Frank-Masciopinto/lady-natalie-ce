@@ -6,11 +6,12 @@ import ControlBar from "../../components/ControlBar";
 import InfoDialog from "../../components/InfoDialog/InfoDialog";
 import QuickLinks from "../../components/QuickLinks/QuickLinks";
 import NewVersionNotification from "../../components/NewVersionNotification/NewVersionNotification";
+import WeddingCountdown from "../../components/CountDown/CountDown.jsx";
 
 export default function Home({ setImageLoaded, imageLoaded, imageLoadedRef, country, city, cityId, imageUrl, smallImageUrl, attribution, fact, countryInfo, cityInfo, currentImageFavoriteStatus, setCurrentImageFavoriteStatus }) {
     return (
         <div className="relative modal-inactive">
-            <NewVersionNotification />
+            {/* <NewVersionNotification /> */}
             <ControlBar
                 cityId={cityId}
                 hideControls={false}
@@ -25,7 +26,8 @@ export default function Home({ setImageLoaded, imageLoaded, imageLoadedRef, coun
             />
             <QuickLinks />
             <InfoDialog city={city} fact={fact} country={country} attribution={attribution} countryInfo={countryInfo} cityInfo={cityInfo} />
-            <div>
+            <WeddingCountdown />
+            <div id="canvaContainer">
                 <ImageLoader
                     alt="Unsplash image"
                     country={country}

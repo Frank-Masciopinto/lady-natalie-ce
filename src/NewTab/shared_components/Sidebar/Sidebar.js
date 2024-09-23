@@ -29,7 +29,7 @@ function Sidebar({ refresh }) {
   const [page] = useState('home');
 
   useEffect(() => {
-    navigate('/');
+    // navigate('/');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -156,7 +156,7 @@ function Sidebar({ refresh }) {
               <span className="ml-3">Home</span>
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
               onClick={
                 user?.isLoggedIn
@@ -464,7 +464,7 @@ function Sidebar({ refresh }) {
               </svg>
               <span className="flex-1 ml-3 whitespace-nowrap">Settings</span>
             </a>
-          </li>
+          </li> */}
         </ul>
         <ul className="pt-4 mt-auto space-y-2">
           <li>
@@ -496,7 +496,7 @@ function Sidebar({ refresh }) {
               <span className="ml-3">Theme</span>
             </a>
           </li>
-          {currentPath === '/' && (
+          {/* {currentPath === '/' && (
             <>
               <li>
                 <a
@@ -537,7 +537,7 @@ function Sidebar({ refresh }) {
                 </a>
               </li>
             </>
-          )}
+          )} */}
         </ul>
       </div>
     </aside>

@@ -1,6 +1,6 @@
-import isWebpSupported from "./locationApiUtils/isWebpSupported";
-import checkIsMobile from "./locationApiUtils/isMobile";
-
+import isWebpSupported from './locationApiUtils/isWebpSupported';
+import checkIsMobile from './locationApiUtils/isMobile';
+import { unsplashImages } from './all_wedding_images';
 let webpSupported = false;
 const isMobile = checkIsMobile();
 
@@ -11,63 +11,67 @@ const checkIsWebpSupported = async () => {
 checkIsWebpSupported();
 
 const getLocation = async () => {
-  const requestUrl = new URL(`${process.env.REACT_APP_API_URL}/locations`);
-  const response = await fetch(requestUrl);
+  // const requestUrl = new URL(`${process.env.REACT_APP_API_URL}/locations`);
+  // console.log(requestUrl);
+  // const response = await fetch(requestUrl);
 
   let newLargeImageUrl = undefined;
   let newMediumImageUrl = undefined;
   let newSmallImageUrl = undefined;
-  
 
   try {
-    const parsedResponse = await response.json();
+    const randomImage =
+      unsplashImages[Math.floor(Math.random() * unsplashImages.length)];
+    console.log(randomImage);
     if (webpSupported) {
-      if (parsedResponse[0].image_url_large?.indexOf("jpeg") !== -1) {
-        newLargeImageUrl = parsedResponse[0].image_url_large.replace(
-          "fm=jpeg",
-          "fm=webp"
+      if (randomImage.image_url_large?.indexOf('jpeg') !== -1) {
+        newLargeImageUrl = randomImage.image_url_large.replace(
+          'fm=jpeg',
+          'fm=webp'
         );
-        newMediumImageUrl = parsedResponse[0].image_url_medium.replace(
-          "fm=jpeg",
-          "fm=webp"
+        newMediumImageUrl = randomImage.image_url_medium.replace(
+          'fm=jpeg',
+          'fm=webp'
         );
-        newSmallImageUrl = parsedResponse[0].image_url_small.replace(
-          "fm=jpeg",
-          "fm=webp"
+        newSmallImageUrl = randomImage.image_url_small.replace(
+          'fm=jpeg',
+          'fm=webp'
         );
-      } else if (parsedResponse[0].image_url_large?.indexOf("jpg") !== -1) {
-        newLargeImageUrl = parsedResponse[0].image_url_large.replace(
-          "fm=jpg",
-          "fm=webp"
+      } else if (randomImage.image_url_large?.indexOf('jpg') !== -1) {
+        newLargeImageUrl = randomImage.image_url_large.replace(
+          'fm=jpg',
+          'fm=webp'
         );
-        newMediumImageUrl = parsedResponse[0].image_url_medium.replace(
-          "fm=jpg",
-          "fm=webp"
+        newMediumImageUrl = randomImage.image_url_medium.replace(
+          'fm=jpg',
+          'fm=webp'
         );
-        newSmallImageUrl = parsedResponse[0].image_url_small.replace(
-          "fm=jpg",
-          "fm=webp"
+        newSmallImageUrl = randomImage.image_url_small.replace(
+          'fm=jpg',
+          'fm=webp'
         );
       }
     }
 
     return {
-      url: isMobile ? newMediumImageUrl || parsedResponse[0]?.image_url_medium : (newLargeImageUrl || parsedResponse[0]?.image_url_large),
-      smallUrl: newSmallImageUrl || parsedResponse[0]?.image_url_small,
-      imageLink: parsedResponse[0]?.image_link,
+      url: isMobile
+        ? newMediumImageUrl || randomImage?.image_url_medium
+        : newLargeImageUrl || randomImage?.image_url_large,
+      smallUrl: newSmallImageUrl || randomImage?.image_url_small,
+      imageLink: null,
       attribution: {
-        image_author_username: parsedResponse[0]?.image_author_username,
-        image_author_name: parsedResponse[0]?.image_author_name,
-        image_author_link: parsedResponse[0]?.image_author_link,
-        originalImageLink: parsedResponse[0]?.image_link,
+        image_author_username: null,
+        image_author_name: null,
+        image_author_link: null,
+        originalImageLink: null,
       },
-      country: parsedResponse[0]?.country,
-      countryName: parsedResponse[0]?.country_name,
-      city: parsedResponse[0]?.city?.id,
-      cityInfo: parsedResponse[0]?.city,
-      cityName: parsedResponse[0]?.city_name,
-      fact: parsedResponse[0]?.fact,
-      id: parsedResponse[0]?._id,
+      country: randomImage?.country,
+      countryName: randomImage?.country_name,
+      city: randomImage?.city?.id,
+      cityInfo: randomImage?.city,
+      cityName: randomImage?.city_name,
+      fact: randomImage?.fact,
+      id: randomImage?._id,
     };
   } catch (error) {
     console.error(error);

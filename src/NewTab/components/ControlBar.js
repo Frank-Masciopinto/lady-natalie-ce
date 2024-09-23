@@ -76,14 +76,14 @@ const ControlBar = ({
               showBackground={true}
             />
           )}
-          {page === 'home' && (
+          {/* {page === 'home' && (
             <ShareIcon
               city={city}
               country={country}
               countryInfo={countryInfo}
               attribution={attribution}
             />
-          )}
+          )} */}
         </div>
       )}
     </div>

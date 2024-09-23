@@ -12,7 +12,10 @@ const ShareIcon = ({ style, hideTooltip, attribution, city, country, countryInfo
     };
 
     const openTwitterShare = () => {
-        window.open(`https://x.com/intent/tweet?hashtags=${city.replace(/\s+/g, '')},${country.replace(/\s+/g, '')},wanderlust&text=${countryInfo.emoji} ${city}, ${country}%0a📷 @wanderlustext ${attribution?.originalImageLink}%0a`, '_blank')
+        window.open(
+          `https://x.com/intent/tweet?hashtags=wedding,ladynatalie&text=LadyNatalie%0a📷`,
+          '_blank'
+        );
     }
 
     const shareToPinterest = () => {

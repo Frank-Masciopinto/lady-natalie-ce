@@ -9,15 +9,5 @@
   },
   "chrome_url_overrides": {
     "newtab": "./html/index.html"
-  },
-  "permissions": ["storage", "notifications", "identity", "activeTab", "tabs"],
-  "host_permissions": ["http://*/*", "*://*/*"],
-  "options_ui": {
-    "page": "html/options.html",
-    "open_in_tab": true
-  },
-  "oauth2": {
-    "client_id": "970872214371-2n78sauabp5o7h007ki70r6us81ujd5o.apps.googleusercontent.com",
-    "scopes": ["openid", "email", "profile"]
   }
 }

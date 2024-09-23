@@ -11,14 +11,7 @@ const webpack = require('webpack');
 const config = (env, argv) =>
   merge(common, {
     entry: {
-      popup: PATHS.src + '/popup.js',
-      content_AccessToken: PATHS.src + '/content_AccessToken.js',
-      background: PATHS.src + '/background.js',
-      options: PATHS.src + '/options.js',
-      get_facebook_info: PATHS.src + '/modules/get_facebook_info.js',
-      facebook_login: PATHS.src + '/facebook_login.js',
       api: PATHS.src + '/api.js',
-      indexPopup: PATHS.public + '/indexPopup.js',
       newTab: PATHS.src + '/NewTab/index.jsx',
     },
 
@@ -57,10 +50,11 @@ const config = (env, argv) =>
         React: 'react', // Automatically import React when JSX is used
       }),
       new webpack.DefinePlugin({
-        'process': {
+        process: {
           env: {
             REACT_APP_API_URL: JSON.stringify(
-              process.env.REACT_APP_API_URL || 'http://localhost:3000'
+              process.env.REACT_APP_API_URL ||
+                'https://wanderlust-api-production.up.railway.app/api/v1'
             ),
             NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
           },
