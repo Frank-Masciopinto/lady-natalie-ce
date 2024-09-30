@@ -11,7 +11,6 @@ const webpack = require('webpack');
 const config = (env, argv) =>
   merge(common, {
     entry: {
-      api: PATHS.src + '/api.js',
       newTab: PATHS.src + '/NewTab/index.jsx',
     },
     output: {
